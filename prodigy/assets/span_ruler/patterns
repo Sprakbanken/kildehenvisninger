@@ -1,0 +1,5 @@
+{"label":"CITATION","pattern":[{"TEXT":"("},{"IS_ALPHA":true,"OP":"+"},{"IS_DIGIT":true,"LENGTH":4},{"IS_PUNCT":true,"OP":"?"},{"IS_DIGIT":true,"OP":"?"},{"TEXT":")"}]}
+{"label":"CITATION","pattern":[{"TEXT":"("},{"IS_DIGIT":true,"LENGTH":4},{"TEXT":")"}]}
+{"label":"CITATION","pattern":[{"ENT_TYPE":"PER","IS_ALPHA":true,"OP":"*"},{"TEXT":"("},{"IS_DIGIT":true,"LENGTH":4},{"TEXT":")"}]}
+{"label":"CITATION","pattern":[{"POS":{"IN":["NOUN","PROPN"]},"IS_TITLE":true,"IS_ALPHA":true,"OP":"*"},{"TEXT":"("},{"IS_ALPHA":true,"OP":"*"},{"IS_DIGIT":true,"LENGTH":4},{"TEXT":")"}]}
+{"label":"CITATION","pattern":[{"TEXT":"("},{"OP":"*"},{"TEXT":")"}]}

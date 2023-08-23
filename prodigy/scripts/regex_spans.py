@@ -1,7 +1,6 @@
 import re
 from typing import List
 
-import spacy
 from spacy.tokens import Doc
 from spacy.language import Language
 
@@ -9,16 +8,20 @@ from spacy.language import Language
 def regex_patterns() -> List:
     """Define and compile regex patterns to capture citations."""
     patterns = [
-        # Year of publication inside parentheses, with optional page numbers : https://regex101.com/r/vr4Adl/1
+        # Year of publication inside parentheses, with optional page numbers
+        # https://regex101.com/r/vr4Adl/1
         r"\(\d{4},? ?s?\.? ?\d*-?\d*\)",
 
-        # One or more names in parentheses, with the year of publication: https://regex101.com/r/Od7g55/2
+        # One or more names in parentheses, with the year of publication
+        # https://regex101.com/r/Od7g55/2
         r"\(([A-ZØÆÅ][a-zæøå]+( ?\d+[,: ]*))+\)",
 
-        # Explicit referencing of name and year, with optional page numbers (jf., se f.eks., sjå t.d.): https://regex101.com/r/z2CS6R/1
+        # Explicit referencing of name and year, with optional page numbers (jf., se f.eks., sjå t.d.)
+        # https://regex101.com/r/z2CS6R/1
         r"\((jf\.|sjå også|se for eksempel|sjå t\.d\.) [A-ZØÆÅ][a-zæøå]+ \d+\:? ?\d+?\)"
 
-        # Name outside parentheses, with the publication year inside: https://regex101.com/r/daYhiM/2
+        # Name outside parentheses, with the publication year inside
+        # https://regex101.com/r/daYhiM/2
         r"([A-ZØÆÅ][a-zæøå]*,? [og& etal\.]*)+\((\d+[,:]? ?)+\)",
 
         # Alt inni parenteser

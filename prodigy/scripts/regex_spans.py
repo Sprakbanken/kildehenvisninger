@@ -15,10 +15,10 @@ def regex_patterns() -> List:
         # One or more names in parentheses, with the year of publication: https://regex101.com/r/Od7g55/2
         r"\(([A-ZØÆÅ][a-zæøå]+( ?\d+[,: ]*))+\)",
 
-        # Explicit referencing of name and year, with optional Med eksplisitt henvisning (jf., se f.eks., sjå t.d.): https://regex101.com/r/z2CS6R/1
-        r"\((jf\.|sjå også|se for eksempel|sjå t\.d\.) [A-ZØÆÅ][a-zæøå]+ \d+[\:s\.,]* ?\d+?\)",
+        # Explicit referencing of name and year, with optional page numbers (jf., se f.eks., sjå t.d.): https://regex101.com/r/z2CS6R/1
+        r"\((jf\.|sjå også|se for eksempel|sjå t\.d\.) [A-ZØÆÅ][a-zæøå]+ \d+\:? ?\d+?\)"
 
-        # Navn utenfor parentes, årstall inni: https://regex101.com/r/daYhiM/2
+        # Name outside parentheses, with the publication year inside: https://regex101.com/r/daYhiM/2
         r"([A-ZØÆÅ][a-zæøå]*,? [og& etal\.]*)+\((\d+[,:]? ?)+\)",
 
         # Alt inni parenteser
